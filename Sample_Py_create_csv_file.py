@@ -8,7 +8,7 @@ access_token=os.getenv('ACCESS_TOKEN')
 org_name = 'new-gen-omega'
 
 # Initialize the Github instance with your access token
-g = Github(access_token)
+# g = Github(access_token)
 
 
 def generate_csv_with_date():
