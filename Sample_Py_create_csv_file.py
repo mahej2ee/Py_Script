@@ -4,8 +4,8 @@ from datetime import datetime
 import csv
 import datetime
 import os
-# access_token=os.getenv('ACCESS_TOKEN')
-access_token = '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'
+access_token=os.getenv('ACCESS_TOKEN')
+# access_token = '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'
 
 # org name
 org_name = 'new-gen-omega'
