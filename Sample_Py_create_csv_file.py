@@ -1,5 +1,4 @@
 from github import Github
-from github import InputFileContent
 from datetime import datetime
 import csv
 import datetime
