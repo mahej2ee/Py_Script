@@ -20,7 +20,7 @@ jobs:
     - name: Generate CSV file
       run: python Sample_Py_create_csv_file.py  # Replace with the command to generate the CSV file
 
-   - name: Move CSV file to repository
+    - name: Move CSV file to repository
       run: |
         cd $GITHUB_WORKSPACE || exit 1
         csv_file=$(find . -name "*.csv" -type f)
