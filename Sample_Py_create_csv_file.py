@@ -1,5 +1,5 @@
 import csv
-import datetime
+from datetime import datetime
 import os
 access_token=os.getenv('ACCESS_TOKEN')
 # access_token = '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'
