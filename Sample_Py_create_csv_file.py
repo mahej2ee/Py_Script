@@ -15,6 +15,7 @@ def generate_csv_with_date():
     # Generate filename with today's date
     today = datetime.date.today()
     filename = f"REPORT_{today.strftime('%Y%m%d%H%M%S')}.csv"
+    print(filename)
 
     # Sample data to write to CSV
     data = [
