@@ -33,7 +33,7 @@ def generate_csv_with_date():
     print(f"CSV file '{filename}' created successfully!")
 
     # Rename the CSV file to include the current date
-    os.rename(filename, f"REPORT_{today.strftime('%Y-%m-%d-%h-%m-%s')}.csv")
+    #os.rename(filename, f"REPORT_{today.strftime('%Y-%m-%d-%h-%m-%s')}.csv")
 
 if __name__ == "__main__":
     generate_csv_with_date()
