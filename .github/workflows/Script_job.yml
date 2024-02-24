@@ -24,9 +24,10 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE || exit 1
         csv_file=$(find . -name "*.csv" -type f)
+        echo $csv_file
         if [ -n "$csv_file" ]; then
           mkdir -p csv_files
-          mv "$csv_file" csv_files/
+          mv *.csv csv_files/
         else
           echo "No CSV file found."
           exit 1
