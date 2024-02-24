@@ -34,10 +34,11 @@ jobs:
         #   exit 1
         # fi
         ls -l
+        mkdir -p csv_files
         mv *.csv csv_files/
         ls -l csv_files/
         cd csv_files
-        rm REPORT_2024-02-24-Feb-02-1708732800.csv
+        #rm REPORT_2024-02-24-Feb-02-1708732800.csv
       
     # - name: List files after moving
     #   run: ls -l csv_files
