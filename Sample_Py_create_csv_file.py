@@ -13,8 +13,8 @@ org_name = 'new-gen-omega'
 
 def generate_csv_with_date():
     # Generate filename with today's date
-    today = datetime.date.today()
-    filename = f"REPORT_{today.strftime('%Y%m%d%H%M%S')}.csv"
+    today = datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = f"REPORT_{today}.csv"
     print(filename)
 
     # Sample data to write to CSV
