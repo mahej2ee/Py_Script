@@ -33,10 +33,12 @@ jobs:
         #   echo "No CSV file found."
         #   exit 1
         # fi
+        ls -l
         mv *.csv csv_files/
+        ls -l csv_files/
       
-    - name: List files after moving
-      run: ls -l csv_files
+    # - name: List files after moving
+    #   run: ls -l csv_files
       
     - name: Commit and push changes
       run: |
