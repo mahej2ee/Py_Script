@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   copy_csv:
     runs-on: ubuntu-latest
@@ -23,27 +22,47 @@ jobs:
 
     - name: Move CSV file to repository
       run: |
+        # cd $GITHUB_WORKSPACE || exit 1
+        # pwd
+        # csv_file=$(find . -name "*.csv" -type f)
+        # echo $csv_file
+        # if [ -n "$csv_file" ]; then
+        #   #mkdir -p csv_files
+        #   mv *.csv csv_files/
+        # else
+        #   echo "No CSV file found."
+        #   exit 1
+        # fi
         ls -l
         mkdir -p csv_files
         mv *.csv csv_files/
         ls -l csv_files/
-
+        cd csv_files
+        #rm REPORT_2024-02-24-Feb-02-1708732800.csv
+      
+    # - name: List files after moving
+    #   run: ls -l csv_files
+      
     - name: Commit and push changes
       run: |
         cd $GITHUB_WORKSPACE || exit 1
         if [[ $(git status --porcelain) ]]; then
           git config --local user.email "gv.reddy77@gmail.com"
           git config --local user.name "omega1477"
+          #git add .
           git add csv_files/*.csv
           git commit -m "Add generated CSV file"
           git push origin main
         else
           echo "No changes to commit."
         fi
+      shell: bash
+      env:
+        ACCESS_TOKEN: $ {{ secrets.ACCESS_TOKEN }}
 
     - name: Lock Pull Request
       uses: sudo-bot/action-pull-request-lock@v1.1.0
       with:
-        github-token: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         number: ${{ github.event.pull_request.number }}
         lock-reason: resolved
