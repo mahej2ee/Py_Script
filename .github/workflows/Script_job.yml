@@ -18,7 +18,7 @@ jobs:
         python-version: '3.12'
         
     - name: Generate CSV file
-      run: python Sample_Py_create_csv_file.py  # Replace with the command to generate the CSV file
+      run: python Sample_Py_create_csv_file.py  # Replace with tShe command to generate the CSV file
 
     - name: Move CSV file to repository
       run: |
