@@ -63,6 +63,6 @@ jobs:
     - name: Lock Pull Request
       uses: sudo-bot/action-pull-request-lock@v1.1.0
       with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        github-token: ${{ secrets.ACCESS_TOKEN }}
         number: ${{ github.event.pull_request.number }}
         lock-reason: resolved
